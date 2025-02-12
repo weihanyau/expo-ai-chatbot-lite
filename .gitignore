@@ -1,0 +1,7 @@
+/ai-chatbot/
+/.idea/
+/.vscode/
+.DS_Store
+aisdk llm.txt
+/expo-ai-chatbot/node_modules/
+/nextjs-ai-chatbot/node_modules/
