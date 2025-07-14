@@ -4,9 +4,9 @@ import { experimental_wrapLanguageModel as wrapLanguageModel } from 'ai';
 
 import { customMiddleware } from './custom-middleware';
 
-export const customModel = (apiIdentifier: string) => {
+export const customModel = () => {
   return wrapLanguageModel({
-    model:  google(apiIdentifier),
+    model:  google("gemini-2.5-pro"),
     middleware: customMiddleware,
   });
 };

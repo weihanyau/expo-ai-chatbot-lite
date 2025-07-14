@@ -1,21 +1,21 @@
-import Markdown from "react-native-markdown-display";
 import {
-  H1 as ExpoH1,
-  H2 as ExpoH2,
-  H3 as ExpoH3,
-  H4 as ExpoH4,
-  H5 as ExpoH5,
-  H6 as ExpoH6,
-  Code as ExpoCode,
-  Pre as ExpoPre,
-  UL as ExpoUl,
-  LI as ExpoLI,
-  Strong as ExpoStrong,
-  A as ExpoA,
-  P as ExpoP,
-  Div as ExpoDiv,
+    A as ExpoA,
+    Code as ExpoCode,
+    Div as ExpoDiv,
+    H1 as ExpoH1,
+    H2 as ExpoH2,
+    H3 as ExpoH3,
+    H4 as ExpoH4,
+    H5 as ExpoH5,
+    H6 as ExpoH6,
+    LI as ExpoLI,
+    P as ExpoP,
+    Pre as ExpoPre,
+    Strong as ExpoStrong,
+    UL as ExpoUl,
 } from "@expo/html-elements";
 import { cssInterop } from "nativewind";
+import Markdown from "react-native-markdown-display";
 
 const H1 = cssInterop(ExpoH1, { className: "style" });
 const H2 = cssInterop(ExpoH2, { className: "style" });
@@ -35,22 +35,22 @@ const Div = cssInterop(ExpoDiv, { className: "style" });
 
 const rules = {
   heading1: (node, children) => (
-    <H4 className="mb-4 mt-4 font-bold">{children}</H4>
+    <H4 className="mb-4 mt-4 font-bold text-white">{children}</H4>
   ),
   heading2: (node, children) => (
-    <H4 className="mb-4 mt-4 font-bold">{children}</H4>
+    <H4 className="mb-4 mt-4 font-bold text-white">{children}</H4>
   ),
   heading3: (node, children) => (
-    <P className="mb-2 mt-2 font-bold">{children}</P>
+    <P className="mb-2 mt-2 font-bold text-white">{children}</P>
   ),
   heading4: (node, children) => (
-    <P className="mb-2 mt-2 font-bold">{children}</P>
+    <P className="mb-2 mt-2 font-bold text-white">{children}</P>
   ),
   heading5: (node, children) => (
-    <P className="mb-2 mt-2 font-bold">{children}</P>
+    <P className="mb-2 mt-2 font-bold text-white">{children}</P>
   ),
   heading6: (node, children) => (
-    <P className="mb-2 mt-2 font-bold">{children}</P>
+    <P className="mb-2 mt-2 font-bold text-white">{children}</P>
   ),
   code: (node, children, parent) => {
     return parent.length > 1 ? (
@@ -84,10 +84,10 @@ const rules = {
     </A>
   ),
   text: (node) => {
-    return <P className="">{node.content}</P>;
+    return <P className="text-white">{node.content}</P>;
   },
   body: (node, children) => {
-    return <Div className="">{children}</Div>;
+    return <Div className="text-white">{children}</Div>;
   },
 };
 

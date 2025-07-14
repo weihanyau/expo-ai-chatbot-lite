@@ -15,9 +15,9 @@ export const models: Array<Model> = [
     description: 'Small model for fast, lightweight tasks',
   },
   {
-    id: 'gpt-4o',
+    id: 'gemini-2.5-flash',
     label: 'GPT 4o',
-    apiIdentifier: 'gpt-4o',
+    apiIdentifier: 'gemini-2.5-flash',
     description: 'For complex, multi-step tasks',
   },
 ] as const;

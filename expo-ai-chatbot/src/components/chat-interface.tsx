@@ -1,14 +1,14 @@
-import { View, ScrollView, ActivityIndicator } from "react-native";
+import { ActivityIndicator, ScrollView, View } from "react-native";
 
 // import Markdown from "react-native-markdown-display";
+import { LottieLoader } from "@/components/lottie-loader";
 import { CustomMarkdown } from "@/components/ui/markdown";
-import { useKeyboard } from "@react-native-community/hooks";
 import { Text } from "@/components/ui/text";
 import WeatherCard from "@/components/weather";
 import { WelcomeMessage } from "@/components/welcome-message";
-import React, { forwardRef } from "react";
 import { cn } from "@/lib/utils";
-import { LottieLoader } from "@/components/lottie-loader";
+import { useKeyboard } from "@react-native-community/hooks";
+import React, { forwardRef } from "react";
 
 type ToolInvocation = {
   toolName: string;
@@ -33,6 +33,7 @@ type ChatInterfaceProps = {
 export const ChatInterface = forwardRef<ScrollView, ChatInterfaceProps>(
   ({ messages, scrollViewRef, isLoading }, ref) => {
     const { keyboardShown, keyboardHeight } = useKeyboard();
+    console.log(messages.find((m) => !!m.toolInvocations)?.toolInvocations);
 
     return (
       <View className="flex-1">
@@ -51,8 +52,8 @@ export const ChatInterface = forwardRef<ScrollView, ChatInterfaceProps>(
                               "mt-4 max-w-[85%] rounded-2xl bg-muted/50 p-4",
                             )}
                           >
-                            <ActivityIndicator size="small" color="black" />
-                            <Text>Getting weather data...</Text>
+                            <ActivityIndicator size="small" color="white" />
+                            <Text style={{color: "white"}}>Getting weather data...</Text>
                           </View>
                         );
                       }
@@ -84,7 +85,7 @@ export const ChatInterface = forwardRef<ScrollView, ChatInterfaceProps>(
                               : "mr-2 mt-1 h-8 w-8 items-center justify-center rounded-full bg-gray-200"
                           }
                         >
-                          <Text className="text-base">
+                          <Text className="text-base text-white">
                             {m.role === "user" ? "" : "🤖"}
                           </Text>
                         </View>

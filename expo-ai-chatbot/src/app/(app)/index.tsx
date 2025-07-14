@@ -1,19 +1,18 @@
-import { generateUUID } from "@/lib/utils";
-import { Redirect, Stack, useNavigation } from "expo-router";
-import { useCallback, useEffect, useRef } from "react";
-import { Pressable, type TextInput, View, ScrollView } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { fetch } from "expo/fetch";
-import { useChat } from "ai/react/dist/index";
-import { LottieLoader } from "@/components/lottie-loader";
 import { ChatInterface } from "@/components/chat-interface";
-import { ChatInput } from "@/components/ui/chat-input";
 import { SuggestedActions } from "@/components/suggested-actions";
-import type { ScrollView as GHScrollView } from "react-native-gesture-handler";
+import { ChatInput } from "@/components/ui/chat-input";
 import { useStore } from "@/lib/globalStore";
-import { MessageCirclePlusIcon, Menu } from "lucide-react-native";
+import { generateUUID } from "@/lib/utils";
 import { Message } from "ai/react";
+import { useChat } from "ai/react/dist/index";
+import { Stack } from "expo-router";
+import { fetch } from "expo/fetch";
+import { MessageCirclePlusIcon } from "lucide-react-native";
+import { useCallback, useEffect, useRef } from "react";
+import { Pressable, ScrollView, type TextInput } from "react-native";
+import type { ScrollView as GHScrollView } from "react-native-gesture-handler";
 import Animated, { FadeIn } from "react-native-reanimated";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 type WeatherResult = {
   city: string;
@@ -55,7 +54,7 @@ const HomePage = () => {
     api: `${process.env.EXPO_PUBLIC_API_URL}/api/chat-open`,
     body: {
       id: chatId?.id,
-      modelId: "gpt-4o-mini",
+      modelId: "gemini-2.5-flash",
     },
     onFinish: () => {
       scrollViewRef.current?.scrollToEnd({ animated: true });

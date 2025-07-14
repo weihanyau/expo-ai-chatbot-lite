@@ -1,6 +1,6 @@
-import { View, Text } from "react-native";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Wind, Droplets, Sun, Cloud } from "@/lib/icons";
+import { Cloud, Droplets, Sun, Wind } from "@/lib/icons";
+import { Text, View } from "react-native";
 
 interface WeatherCardProps {
   city: string;
@@ -48,9 +48,9 @@ export default function WeatherCard({
   };
 
   return (
-    <Card className="x-auto mt-4 w-full">
+    <Card className="x-auto mt-4 w-full bg-white">
       <CardHeader className="flex-row items-center justify-between pb-2">
-        <CardTitle className="text-sm font-medium">{city}</CardTitle>
+        <CardTitle className="text-sm font-medium text-black">{city}</CardTitle>
         {getWeatherIcon(weatherCode)}
       </CardHeader>
       <CardContent>
