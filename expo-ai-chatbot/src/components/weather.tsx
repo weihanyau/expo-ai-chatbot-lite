@@ -25,6 +25,7 @@ export default function WeatherCard({
       return (
         <Sun
           size={50}
+          color="orange"
           className="absolute right-4 top-4 h-12 w-12 text-yellow-200"
         />
       );
